@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <script type="text/javascript">    
+function getFileSize(fileObj)    
+{    
+        //不能使用new Image，ie下报无dynsrc属性  
+    var img1 = document.getElementById('img1');  
+    img1.dynsrc=fileObj.value; 
+    console.log(fileObj.value);
+        //img1.fileSize：IE ， fileObj.files[0].fileSize：chrome， fileObj.files[0].size：FF  
+    var size = img1.fileSize || fileObj.files[0].fileSize || fileObj.files[0].size;    
+    // alert(size);  
+    console.log(size);  
+}    
+</script>    
+<body>    
+<INPUT TYPE="file" NAME="file" SIZE="30" onchange="getFileSize(this)">   
+<img id='img1' dynsrc=''/ src='C:\Users\john\Desktop\01\screenshots\barchart3d.png'>   
+</body>
+</html>
